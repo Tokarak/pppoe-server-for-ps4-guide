@@ -27,7 +27,13 @@ The ps4 must be connected by ethernet to the PPPoe server and the jailbreak serv
 
 # Steps for my set up
 1. Get a working implementation of a pppoe server (I wrote about my problems in section "Hardware and Software")
-2. Here is my diff from the default accel-ppp config
+2. I am running a dns server with adblocking on my router. For some reason, the ps4 could not access it on the ethernet interface ("hairpinning"), so I let the dns server run on the accel-ppp interface.
+Add to `/jffs/configs/dnsmasq.conf.add`:
+```
+interface=ppp0
+no-dhcp-interface=ppp0 # accel-ppp interface
+```
+4. Here is my diff from the default accel-ppp config
 ```diff
 --- accel-ppp.conf-opkg
 +++ accel-ppp.conf
