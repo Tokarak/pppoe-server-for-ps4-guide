@@ -151,3 +151,5 @@ no-dhcp-interface=ppp0 # accel-ppp interface
  #encrypted=0
  #username-hash=md5
 ```
+
+_I gave up on writing my guide halfway through; and I ca't remember what I missed. The general steps should be enough in most cases._
